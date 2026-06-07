@@ -2,6 +2,8 @@ import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../../environments/environment';
+
 
 @Component({
   selector: 'app-reports',
@@ -130,7 +132,7 @@ export class ReportsComponent implements OnInit {
   loadReport(): void {
     this.loading = true;
     this.cdr.detectChanges();
-    this.http.get(`http://localhost:8080/api/v1/reports/monthly?month=${this.selectedMonth}&year=${this.selectedYear}`)
+    this.http.get(`${environment.apiUrl}/reports/monthly?month=...`)
       .subscribe({
         next: (data: any) => {
           this.report = data;

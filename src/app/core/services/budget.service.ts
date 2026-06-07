@@ -2,10 +2,11 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { BudgetRequest, BudgetResponse } from '../models/budget.model';
+import { environment } from '../../../environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class BudgetService {
-  private readonly API = 'http://localhost:8080/api/v1/budgets';
+  private readonly API = `${environment.apiUrl}/auth`;
 
   constructor(private http: HttpClient) {}
 

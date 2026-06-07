@@ -5,6 +5,7 @@ import { ExpenseService } from '../../core/services/expense.service';
 import { CategoryService } from '../../core/services/category.service';
 import { ExpenseResponse, ExpenseRequest } from '../../core/models/expense.model';
 import { CategoryResponse } from '../../core/models/category.model';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-expenses',
@@ -403,7 +404,7 @@ export class ExpensesComponent implements OnInit {
   }
 
   loadPaymentMethods(): void {
-    fetch('http://localhost:8080/api/v1/payment-methods', {
+    fetch(`${environment.apiUrl}/payment-methods`, {
       headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
     })
       .then((r) => r.json())

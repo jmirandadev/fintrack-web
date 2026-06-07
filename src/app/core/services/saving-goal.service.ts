@@ -2,10 +2,11 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { SavingGoalRequest, SavingGoalResponse } from '../models/saving-goal.model';
+import { environment } from '../../../environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class SavingGoalService {
-  private readonly API = 'http://localhost:8080/api/v1/saving-goals';
+  private readonly API = `${environment.apiUrl}/auth`;
 
   constructor(private http: HttpClient) {}
 
