@@ -6,7 +6,7 @@ import { environment } from '../../../environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class SavingGoalService {
-  private readonly API = `${environment.apiUrl}/auth`;
+  private readonly API = `${environment.apiUrl}/saving-goals`;
 
   constructor(private http: HttpClient) {}
 
